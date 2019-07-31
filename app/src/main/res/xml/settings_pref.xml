@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ListPreference
+        android:key="@string/category"
+        android:title="@string/category"
+        android:entries="@array/categoryItem"
+        android:entryValues="@array/categoryItemValue"
+        app:useSimpleSummaryProvider="true"
+        app:defaultValue="9"
+        android:summary="Select Category"
+        >
+    </ListPreference>
+    <ListPreference
+        android:key="@string/difficulty"
+        android:title="@string/difficulty"
+        android:entries="@array/levels"
+        android:entryValues="@array/levels"
+        app:useSimpleSummaryProvider="true"
+        android:defaultValue="@string/easy"
+        app:summary="Select Difficulty"
+        >
+    </ListPreference>
+</PreferenceScreen>
