@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-package com.example.android.navigation
+package com.example.android.navigation.gameWon
 
 import android.content.Intent
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import com.example.android.navigation.R
 import com.example.android.navigation.databinding.FragmentGameWonBinding
 
 
 class GameWonFragment : Fragment() {
-    private lateinit var args:GameWonFragmentArgs
+    private lateinit var args: GameWonFragmentArgs
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -41,19 +40,20 @@ class GameWonFragment : Fragment() {
             view.findNavController().navigate(GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
         }
         setHasOptionsMenu(true)
-         args=GameWonFragmentArgs.fromBundle(arguments!!)
-        Toast.makeText(context,"NumOfCorrect:${args.numCorrect},NumOfQues:${args.numOfQues}",Toast.LENGTH_LONG).show();
+         args= GameWonFragmentArgs.fromBundle(arguments!!)
+        Toast.makeText(context,"NumOfCorrect:${args.numCorrect},NumOfQues:${args.numOfQues}",Toast.LENGTH_LONG).show()
         return binding.root
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.winner_menu,menu)
+        inflater.inflate(R.menu.winner_menu,menu)
         //check i there an application to handel the intent
         if(null==getShareIntent().resolveActivity(activity!!.packageManager))
         {
             //if there is no app to handle this intent w hide the shar menu item
-            menu?.findItem(R.id.share)!!.setVisible(false)
+            menu.findItem(R.id.share)!!.setVisible(false)
 
         }
     }
@@ -72,10 +72,10 @@ class GameWonFragment : Fragment() {
         startActivity(getShareIntent())
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when(item!!.itemId)
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId)
         {
-            R.id.share->shareScuccess()
+            R.id.share ->shareScuccess()
         }
         return super.onOptionsItemSelected(item)
     }

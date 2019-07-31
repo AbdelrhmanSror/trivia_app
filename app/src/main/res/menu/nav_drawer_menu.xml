@@ -2,10 +2,15 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <group >
+        <item
+            android:id="@+id/rulesFragment"
+            android:title="@string/rules" />
+        <item
+            android:id="@+id/aboutFragment"
+            android:title="@string/about" />
+    </group>
     <item
-        android:id="@+id/rulesFragment"
-        android:title="@string/rules" />
-    <item
-        android:id="@+id/aboutFragment"
-        android:title="@string/about" />
+        android:id="@+id/settings_fragment"
+        android:title="@string/settings"/>
 </menu>

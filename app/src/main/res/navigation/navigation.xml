@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/titleFragment"
-        android:name="com.example.android.navigation.TitleFragment"
+        android:name="com.example.android.navigation.title.TitleFragment"
         android:label="fragment_title"
         tools:layout="@layout/fragment_title" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
-        android:name="com.example.android.navigation.GameFragment"
+        android:name="com.example.android.navigation.game.GameFragment"
         android:label="fragment_game"
         tools:layout="@layout/fragment_game" >
         <action
@@ -30,17 +30,17 @@
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_in_right"
-            app:popUpTo="@+id/AboutFragment"
+            app:popUpTo="@+id/aboutFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_gameFragment_to_gameWonFragment"
             app:destination="@id/gameWonFragment"
-            app:popUpTo="@+id/AboutFragment"
+            app:popUpTo="@+id/aboutFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/gameOverFragment2"
-        android:name="com.example.android.navigation.GameOverFragment"
+        android:name="com.example.android.navigation.gameOver.GameOverFragment"
         android:label="fragment_game_over"
         tools:layout="@layout/fragment_game_over" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameWonFragment"
-        android:name="com.example.android.navigation.GameWonFragment"
+        android:name="com.example.android.navigation.gameWon.GameWonFragment"
         android:label="fragment_game_won"
         tools:layout="@layout/fragment_game_won" >
         <action
@@ -64,12 +64,17 @@
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.example.android.navigation.AboutFragment"
+        android:name="com.example.android.navigation.about.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/rulesFragment"
-        android:name="com.example.android.navigation.RulesFragment"
+        android:name="com.example.android.navigation.rules.RulesFragment"
         android:label="fragment_rules"
         tools:layout="@layout/fragment_rules" />
+    <fragment
+        android:id="@+id/settings_fragment"
+        android:name="com.example.android.navigation.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
